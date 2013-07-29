@@ -3,25 +3,21 @@ package com.anirudh.ws.service;
 import java.util.HashSet;
 import java.util.Set;
 
-
-public class ShoppingApplication extends Application{
+public class ShoppingApplication extends javax.ws.rs.core.Application {
 	
-	private Set<Object> singletons = new HashSet<Object>();
-	
+	private Set<Object> singeltons = new HashSet<Object>();
 	private Set<Class<?>> empty = new HashSet<Class<?>>();
 	
 	public ShoppingApplication(){
-		singletons.add(new CustomerResource());
+		singeltons.add(new CustomerResource());
 	}
-
-	@Override
-	public Set<Class<?>> getClasses() {
+	
+	public Set<Class<?>> getClasses(){
 		return empty;
 	}
 	
-	@Override
 	public Set<Object> getSingletons(){
-		return singletons;
+		return singeltons;
 	}
 
 }

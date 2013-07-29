@@ -35,6 +35,12 @@ public class CustomerResource {
 	
 	private AtomicInteger idCounter = new AtomicInteger();
 	
+	@GET
+	@Produces("text/html")
+	public String getIndex(){
+		return "Hello";
+	}
+	
 	@POST
 	@Consumes("application/xml")
 	public Response createCustomer(InputStream is){
@@ -51,6 +57,12 @@ public class CustomerResource {
 	@Produces("application/xml") // This annotation tells JAX-RS which content-type GET reponse will be.
 	//PathParam will take care to convert String id coming from URL into int.
 	public StreamingOutput getCustomer(@PathParam("id") int id){
+		Customer cust1 = new Customer();
+		cust1.setId(1);
+		cust1.setFirstName("frst1");
+		cust1.setLastName("last1");
+		customerDB.put(1, cust1);
+		
 		final Customer customer = customerDB.get(id);
 		if(customer == null){
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
