@@ -20,6 +20,7 @@ import com.anirudh.ws.domain.Customer;
  * @author anirudh
  * this class is used as we are not using JAXB to convert XML into object and object into XML(marshelling and unmarshelling)
  */
+@Deprecated //We will use JAXB instead to convert Java Objects to XML
 public class Util {
 
 	public static void outputCustomer(OutputStream os, Customer cust) {
