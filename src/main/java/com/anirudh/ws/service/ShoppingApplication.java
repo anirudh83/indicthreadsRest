@@ -3,6 +3,11 @@ package com.anirudh.ws.service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 
+ * @author anirudh
+ *
+ */
 public class ShoppingApplication extends javax.ws.rs.core.Application {
 	
 	private Set<Object> singeltons = new HashSet<Object>();
